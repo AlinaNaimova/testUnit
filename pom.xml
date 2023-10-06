@@ -54,6 +54,11 @@
             <artifactId>selenium-java</artifactId>
             <version>3.141.59</version> <!-- Замените на актуальную версию Selenium WebDriver -->
         </dependency>
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>1.33</version>
+        </dependency>
 
 
     </dependencies>
