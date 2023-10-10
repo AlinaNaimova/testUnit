@@ -1,10 +1,11 @@
-package task4;
+package task4Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.*;
+import task4.Calculator;
 
 class CalculatorTest {
     Calculator calculator;
