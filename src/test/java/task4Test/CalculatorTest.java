@@ -10,6 +10,12 @@ import task4.Calculator;
 class CalculatorTest {
     Calculator calculator;
 
+    //улучшения!!!!
+    private static final double INVALID_AMOUNT = -300;
+    private static final double VALID_AMOUNT = 300;
+    private static final double INVALID_DISCOUNT = -10;
+    private static final double VALID_DISCOUNT = 15;
+
     @BeforeEach
     void setUp() {
         calculator = new Calculator();
@@ -113,22 +119,41 @@ class CalculatorTest {
         assertThat(result).isEqualTo(100);
     }
 
+//    @Test
+//    @DisplayName("Проверка метода calculateDiscount при передаче некорректных аргументов")
+//    void testCalculateDiscountWithInvalidArguments() {
+//        // Проверяем, что метод выбрасывает исключение при передаче отрицательной суммы покупки.
+//        assertThatThrownBy(() -> calculator.calculateDiscount(-300, 15))
+//                .isInstanceOf(ArithmeticException.class).hasMessage("Некорректные аргументы");
+//
+//        // Проверяем, что метод выбрасывает исключение при передаче отрицательного процента скидки.
+//        assertThatThrownBy(() -> calculator.calculateDiscount(300, -10))
+//                .isInstanceOf(ArithmeticException.class).hasMessage("Некорректные аргументы");
+//
+//        // Проверяем, что метод выбрасывает исключение при передаче процента скидки, превышающего 300.
+//        assertThatThrownBy(() -> calculator.calculateDiscount(300, 350))
+//                .isInstanceOf(ArithmeticException.class).hasMessage("Некорректные аргументы");
+//    }
+
+
+    //улучшения!!!!
     @Test
     @DisplayName("Проверка метода calculateDiscount при передаче некорректных аргументов")
     void testCalculateDiscountWithInvalidArguments() {
-        // Проверяем, что метод выбрасывает исключение при передаче отрицательной суммы покупки.
-        assertThatThrownBy(() -> calculator.calculateDiscount(-300, 15))
-                .isInstanceOf(ArithmeticException.class).hasMessage("Некорректные аргументы");
+        assertAll(
+                () -> assertThatThrownBy(() -> calculator.calculateDiscount(INVALID_AMOUNT, VALID_DISCOUNT))
+                        .isInstanceOf(ArithmeticException.class)
+                        .hasMessage("Некорректные аргументы"),
 
-        // Проверяем, что метод выбрасывает исключение при передаче отрицательного процента скидки.
-        assertThatThrownBy(() -> calculator.calculateDiscount(300, -10))
-                .isInstanceOf(ArithmeticException.class).hasMessage("Некорректные аргументы");
+                () -> assertThatThrownBy(() -> calculator.calculateDiscount(VALID_AMOUNT, INVALID_DISCOUNT))
+                        .isInstanceOf(ArithmeticException.class)
+                        .hasMessage("Некорректные аргументы"),
 
-        // Проверяем, что метод выбрасывает исключение при передаче процента скидки, превышающего 300.
-        assertThatThrownBy(() -> calculator.calculateDiscount(300, 350))
-                .isInstanceOf(ArithmeticException.class).hasMessage("Некорректные аргументы");
+                () -> assertThatThrownBy(() -> calculator.calculateDiscount(VALID_AMOUNT, VALID_DISCOUNT + 300))
+                        .isInstanceOf(ArithmeticException.class)
+                        .hasMessage("Некорректные аргументы")
+        );
     }
-
 
 
 

@@ -10,6 +10,9 @@ public class Car extends Vehicle {
         this.company = company;
         this.model = model;
         this.yearRelease = year;
+        if (year < 0) {
+            throw new IllegalArgumentException("Year of release must be a positive integer");
+        }
         this.numWheels = 4;
         this.speed = 0;
     }
@@ -21,4 +24,5 @@ public class Car extends Vehicle {
     public int getNumWheels() { return numWheels; }
     public int getSpeed() { return speed; }
     public String toString() { return "This car is a “ + year + “ “ + make + “ “ + model + ";}
+
 }

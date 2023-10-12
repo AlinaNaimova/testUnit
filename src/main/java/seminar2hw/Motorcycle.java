@@ -11,6 +11,9 @@ public class Motorcycle extends Vehicle {
         this.company = company;
         this.model = model;
         this.yearRelease = year;
+        if (year < 0) {
+            throw new IllegalArgumentException("Year of release must be a positive integer");
+        }
         this.numWheels = 2;
         this.speed = 0;
     }
