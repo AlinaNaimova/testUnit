@@ -3,6 +3,7 @@ package task4Test;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.*;
+import static task4.Calculator.calculateCircumference;
 
 import org.junit.jupiter.api.*;
 import task4.Calculator;
@@ -153,8 +154,15 @@ class CalculatorTest {
                         .isInstanceOf(ArithmeticException.class)
                         .hasMessage("Некорректные аргументы")
         );
+
     }
 
+    //Тест к Unit-тесты (лекции) Урок 3. Качество тестов(дз после лекции)
+    @Test
+    @DisplayName("Проверка вычисления длинны окружности")
+    public void circumferenceCalculationTest() {
+        assertEquals(50.26548245743669, calculateCircumference(8), 0.000000000000001);
+    }
 
 
 }

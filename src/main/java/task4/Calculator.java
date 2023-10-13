@@ -25,4 +25,13 @@ public class Calculator {
         return purchaseAmount - discountAmount;
     }
 
+    //Метод к Unit-тесты (лекции) Урок 3. Качество тестов(дз после лекции)
+    public static double calculateCircumference(double radius) {
+        if (radius < 0) {
+            throw new IllegalArgumentException("Некорректные аргументы");
+        }
+        return 2 * Math.PI * radius;
+    }
+
+
 }
