@@ -1,10 +1,7 @@
-package task4Test;
+package task4;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.jupiter.api.DisplayName;
-import task4.Product;
-import task4.Shop;
 
 import java.util.ArrayList;
 import java.util.List;

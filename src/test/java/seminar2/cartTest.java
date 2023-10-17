@@ -1,9 +1,8 @@
-package seminar2Test;
+package seminar2;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import seminar2.Cart;
-import seminar2.Product;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class cartTest {

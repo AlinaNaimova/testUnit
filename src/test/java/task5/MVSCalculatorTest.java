@@ -1,8 +1,7 @@
-package task5Test;
+package task5;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import task5.MVSCalculator;
 
 import static org.junit.jupiter.api.Assertions.*;
 

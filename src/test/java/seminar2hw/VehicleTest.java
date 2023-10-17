@@ -1,10 +1,7 @@
-package seminar2hwTest;
+package seminar2hw;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
-import seminar2hw.Car;
-import seminar2hw.Motorcycle;
-import seminar2hw.Vehicle;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

@@ -1,4 +1,4 @@
-package task4Test;
+package task4;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import static task4.Calculator.calculateCircumference;
 
 import org.junit.jupiter.api.*;
-import task4.Calculator;
 
 class CalculatorTest {
     Calculator calculator;
